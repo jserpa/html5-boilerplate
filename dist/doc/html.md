@@ -3,23 +3,11 @@ table of contents](TOC.md)
 
 # The HTML
 
-By default, HTML5 Boilerplate provides two `html` pages:
+## The `no-js` class
 
-* [`index.html`](#indexhtml) - a default HTML skeleton that should form the
-  basis of all pages on your website
-* [`404.html`](#404html) - a placeholder 404 error page
-
-
-## `index.html`
-
-
-### The `no-js` class
-
-The `no-js` class is provided in order to allow you to more easily and
-explicitly add custom styles based on whether JavaScript is disabled
-(`.no-js`) or enabled (`.js`). Using this technique also helps [avoid the
+Allows you to more easily explicitly add custom styles when JavaScript is
+disabled (`no-js`) or enabled (`js`). More here: [Avoiding the
 FOUC](http://paulirish.com/2009/avoiding-the-fouc-v3/).
-
 
 ## Language attribute
 
@@ -30,29 +18,22 @@ attribute to `<html>` as in this example:
 <html class="no-js" lang="en">
 ```
 
-### The order of the `<title>` and `<meta>` tags
+## The order of meta tags, and `<title>`
 
-The order in which the `<title>` and the `<meta>` tags are specified is
-important because:
+As recommended by [the HTML5
+spec](http://www.whatwg.org/specs/web-apps/current-work/complete/semantics.html#charset)
+(4.2.5.5 Specifying the document's character encoding), add your charset
+declaration early (before any ASCII art ;) to avoid a potential
+[encoding-related security
+issue](http://code.google.com/p/doctype-mirror/wiki/ArticleUtf7) in IE. It
+should come in the first [1024
+bytes](http://www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#charset).
 
-1) the charset declaration (`<meta charset="utf-8">`):
+The charset should also come before the `<title>` tag, due to [potential XSS
+vectors](http://code.google.com/p/doctype-mirror/wiki/ArticleUtf7).
 
-   * must be included completely within the [first 1024 bytes of the
-     document](http://www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#charset)
-
-   * should be specified as early as possbile (before any content that could
-     be controlled by an attacker, such as a `<title>` element) in order to
-     avoid a potential [encoding-related security
-     issue](http://code.google.com/p/doctype-mirror/wiki/ArticleUtf7) in
-     Internet Explorer
-
-2) the meta tag for compatibility mode
-   (`<meta http-equiv="X-UA-Compatible" content="IE=edge">`):
-
-   * [needs to be included before all other tags except for the `<title>` and
-     the other `<meta>`
-     tags](http://msdn.microsoft.com/en-us/library/cc288325.aspx)
-
+The meta tag for compatibility mode [needs to be before all elements except
+title and meta](http://h5bp.com/f "Defining Document Compatibility - MSDN").
 
 ## X-UA-Compatible
 

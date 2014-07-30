@@ -140,7 +140,7 @@ snippet](http://mathiasbynens.be/notes/async-analytics-snippet#universal-analyti
 included with HTML5 Boilerplate includes something like this:
 
 ```js
-ga('create', 'UA-XXXXX-X', 'auto'); ga('send', 'pageview');
+ga('create','UA-XXXXX-X'); ga('send','pageview');
 ```
 
 To customize further, see Google's [Advanced
@@ -159,7 +159,7 @@ parameter](https://developers.google.com/analytics/devguides/collection/analytic
 before sending any events/pagviews. In use it looks like this:
 
 ```js
-ga('create', 'UA-XXXXX-X', 'auto');
+ga('create','UA-XXXXX-X');
 ga('set', 'anonymizeIp', true);
 ga('send', 'pageview');
 ```
@@ -567,6 +567,13 @@ Home Screen icon. This works since iOS 6.
 
   ```html
 <meta name="apple-mobile-web-app-title" content="">
+```
+
+On iOS 7.1, you can minimize the top and bottom bars on the iPhone as the page
+loads, simply by adding the `minimal-ui` property to the `viewport` meta tag.
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
 ```
 
 For further information please read the [official
